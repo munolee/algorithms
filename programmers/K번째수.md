@@ -8,7 +8,7 @@ https://programmers.co.kr/learn/courses/30/lessons/42748
 - 문제 설명대로 i번째 숫자부터 j번째 숫자까지 자르고, 그 배열을 정렬하고 k번째 수를 구해 commands의 길이만큼 반복해 배열에 담아 return 하도록 합니다.
 
 ```javascript
-function findArrayData(tempArr, commands) {
+function solution(tempArr, commands) {
   let result = [];
   for (let i = 0; i < commands.length; i++) {
     let temp = [];
@@ -17,7 +17,7 @@ function findArrayData(tempArr, commands) {
     let index = commands[i][2];
 
     temp = tempArr.slice(min - 1, max);
-    temp.sort();
+    temp.sort((a, b) => a - b);
 
     result.push(temp[index - 1]);
   }
@@ -31,5 +31,5 @@ const commands = [
   [1, 7, 3],
 ];
 
-console.log(findArrayData(array, commands));
+console.log(solution(array, commands));
 ```
