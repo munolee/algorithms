@@ -1,4 +1,4 @@
-# K번째수
+# H-Index
 
 https://programmers.co.kr/learn/courses/30/lessons/42747
 
@@ -17,7 +17,7 @@ https://programmers.co.kr/learn/courses/30/lessons/42747
 ```javascript
 function solution(citations) {
   let answer = 0;
-  let max = Math.max.apply(null, citations);
+  let max = Math.max(...citations);
 
   for (let h = 1; h < max + 1; h++) {
     let above = 0; //## 이상
